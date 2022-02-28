@@ -13,6 +13,7 @@ const searchButton = () => {
 const displayPhones = phones => {
     console.log(phones)
     const searchTotal = document.getElementById('searchTotal')
+    searchTotal.textContent = ''
     phones.forEach(phone => {
         const div = document.createElement('div')
         div.classList.add('col')
@@ -48,9 +49,29 @@ const displayButtonDetails = phones => {
     div.classList.add('card')
     div.innerHTML = `
     <img src="${phones.image}" class="card-img-top  w-25 mx-auto" alt="...">
-    <div class="card-body">
+    <div class="card-body text-center">
         <h4 class="card-text">Device-Name : ${phones.name}</h4>
         <p>${phones.releaseDate ? phones.releaseDate : ''}</p>
+        <div>
+            <h4 > MainFeatures  </h4>
+            <p> storage: '${phones.mainFeatures.storage}'</p>
+            <p> memory: '${phones.mainFeatures.memory}'</p>
+            <p> displaySize: '${phones.mainFeatures.displaySize}'</p>
+            <p> chipSet: '${phones.mainFeatures.chipSet}'</p>
+        </div>
+        <div>
+            <h4 > Others  </h4>
+            <p> WLAN: '${phones.others.WLAN}'</p>
+            <p> Bluetooth: '${phones.others.Bluetooth}'</p>
+            <p> GPS: '${phones.others.GPS}'</p>
+            <p> NFC: '${phones.others.NFC}'</p>
+            <p> USB: '${phones.others.USB}'</p>
+        </div>
+        <div>
+        <h4 > Sensors  </h4>
+        <p> sensors: '${phones.mainFeatures.sensors}'</p>
+        </div>
+        
     </div>
     `
     singlePhoneDetails.appendChild(div)
