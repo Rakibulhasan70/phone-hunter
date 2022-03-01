@@ -1,13 +1,29 @@
-
 const searchButton = () => {
     const searchInput = document.getElementById('inputFeild')
     const searchInputText = searchInput.value
-    // console.log(searchInputText)
-
+    const singlePhoneDetails = document.getElementById('singlePhoneDetails')
+    singlePhoneDetails.textContent = ''
+    // console.log(searchInputText)}
     const url = `https://openapi.programming-hero.com/api/phones?search=${searchInputText}`
     fetch(url)
         .then(res => res.json())
-        .then(data => displayPhones(data.data))
+        .then(data => {
+            if (data.data.length === 0) {
+                // console.log('something')
+                const errorMessage = document.getElementById('error-message')
+                errorMessage.classList.remove('d-none')
+                const singlePhoneDetails = document.getElementById('singlePhoneDetails')
+                singlePhoneDetails.textContent = ''
+
+                const searchTotal = document.getElementById('searchTotal')
+                searchTotal.textContent = ''
+            }
+            else {
+                displayPhones(data.data)
+                const errorMessage = document.getElementById('error-message')
+                errorMessage.classList.add('d-none')
+            }
+        })
 
     searchInput.value = ''
 }
@@ -65,7 +81,7 @@ const displayButtonDetails = phones => {
      <div>
         <h4 > Others  </h4>
         <p> WLAN: '${phones.others ? phones.others.WLAN : 'undefined'}'</p>
-        <p> Bluetooth: '${phones.others ? phones.others.Bluetooth : ''}'</p>
+        <p> Bluetooth: '${phones.others ? phones.others.Bluetooth : 'undefined'}'</p>
         <p> GPS: '${phones.others ? phones.others.GPS : 'undefined'}'</p>
         <p> NFC: '${phones.others ? phones.others.NFC : 'undefined'}'</p>
         <p> USB: '${phones.others ? phones.others.USB : 'undefined'}'</p>
