@@ -1,7 +1,9 @@
+
 const searchButton = () => {
     const searchInput = document.getElementById('inputFeild')
     const searchInputText = searchInput.value
     // console.log(searchInputText)
+
     const url = `https://openapi.programming-hero.com/api/phones?search=${searchInputText}`
     fetch(url)
         .then(res => res.json())
@@ -9,6 +11,7 @@ const searchButton = () => {
 
     searchInput.value = ''
 }
+
 
 const displayPhones = phones => {
     console.log(phones)
@@ -51,7 +54,7 @@ const displayButtonDetails = phones => {
     <img src="${phones.image}" class="card-img-top  w-25 mx-auto" alt="...">
     <div class="card-body text-center">
         <h4 class="card-text">Device-Name : ${phones.name}</h4>
-        <p>${phones.releaseDate ? phones.releaseDate : ''}</p>
+        <p> Realse Date:${phones.releaseDate ? phones.releaseDate : 'undefined'}</p>
         <div>
             <h4 > MainFeatures  </h4>
             <p> storage: '${phones.mainFeatures.storage}'</p>
@@ -59,14 +62,14 @@ const displayButtonDetails = phones => {
             <p> displaySize: '${phones.mainFeatures.displaySize}'</p>
             <p> chipSet: '${phones.mainFeatures.chipSet}'</p>
         </div>
-        <div>
-            <h4 > Others  </h4>
-            <p> WLAN: '${phones.others.WLAN}'</p>
-            <p> Bluetooth: '${phones.others.Bluetooth}'</p>
-            <p> GPS: '${phones.others.GPS}'</p>
-            <p> NFC: '${phones.others.NFC}'</p>
-            <p> USB: '${phones.others.USB}'</p>
-        </div>
+     <div>
+        <h4 > Others  </h4>
+        <p> WLAN: '${phones.others ? phones.others.WLAN : 'undefined'}'</p>
+        <p> Bluetooth: '${phones.others ? phones.others.Bluetooth : ''}'</p>
+        <p> GPS: '${phones.others ? phones.others.GPS : 'undefined'}'</p>
+        <p> NFC: '${phones.others ? phones.others.NFC : 'undefined'}'</p>
+        <p> USB: '${phones.others ? phones.others.USB : 'undefined'}'</p>
+    </div>
         <div>
         <h4 > Sensors  </h4>
         <p> sensors: '${phones.mainFeatures.sensors}'</p>
