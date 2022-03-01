@@ -71,7 +71,7 @@ const displayButtonDetails = phones => {
     <img src="${phones.image}" class="card-img-top  w-25 mx-auto" alt="...">
     <div class="card-body text-center">
         <h4 class="card-text">Device-Name : ${phones.name}</h4>
-        <p> Realse Date:${phones.releaseDate ? phones.releaseDate : 'undefined'}</p>
+        <p> Realse Date:${phones.releaseDate ? phones.releaseDate : 'No realse Date Found'}</p>
         <div>
             <h4 > MainFeatures  </h4>
             <p> storage: '${phones.mainFeatures.storage}'</p>
@@ -85,6 +85,7 @@ const displayButtonDetails = phones => {
         <p> Bluetooth: '${phones.others ? phones.others.Bluetooth : 'undefined'}'</p>
         <p> GPS: '${phones.others ? phones.others.GPS : 'undefined'}'</p>
         <p> NFC: '${phones.others ? phones.others.NFC : 'undefined'}'</p>
+        <p> Radio: '${phones.others ? phones.others.Radio : 'undefined'}'</p>
         <p> USB: '${phones.others ? phones.others.USB : 'undefined'}'</p>
     </div>
         <div>
