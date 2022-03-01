@@ -16,7 +16,7 @@ const displayPhones = phones => {
     searchTotal.textContent = ''
     phones.forEach(phone => {
         const div = document.createElement('div')
-        div.classList.add('col')
+        div.classList.add('col)')
         div.innerHTML = `
         <div class="card mx-auto">
         <img src="${phone.image}" class="card-img-top w-50 mx-auto" alt="...">
