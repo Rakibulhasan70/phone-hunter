@@ -1,3 +1,12 @@
 #heading{
-    color: #507c7e;
+    color: #ec3f3f;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.hub {
+    color: #ecb041;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#inputId{
+    background-color: #ffe0c3;
+    color: black;
 }

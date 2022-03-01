@@ -81,12 +81,12 @@ const displayButtonDetails = phones => {
         </div>
      <div>
         <h4 > Others  </h4>
-        <p> WLAN: '${phones.others ? phones.others.WLAN : 'undefined'}'</p>
-        <p> Bluetooth: '${phones.others ? phones.others.Bluetooth : 'undefined'}'</p>
-        <p> GPS: '${phones.others ? phones.others.GPS : 'undefined'}'</p>
-        <p> NFC: '${phones.others ? phones.others.NFC : 'undefined'}'</p>
-        <p> Radio: '${phones.others ? phones.others.Radio : 'undefined'}'</p>
-        <p> USB: '${phones.others ? phones.others.USB : 'undefined'}'</p>
+        <p> WLAN: '${phones.others ? phones.others.WLAN : 'No result found'}'</p>
+        <p> Bluetooth: '${phones.others ? phones.others.Bluetooth : 'No result found'}'</p>
+        <p> GPS: '${phones.others ? phones.others.GPS : 'No result found'}'</p>
+        <p> NFC: '${phones.others ? phones.others.NFC : 'No result found'}'</p>
+        <p> Radio: '${phones.others ? phones.others.Radio : 'undeNo result foundfined'}'</p>
+        <p> USB: '${phones.others ? phones.others.USB : 'No result found'}'</p>
     </div>
         <div>
         <h4 > Sensors  </h4>
