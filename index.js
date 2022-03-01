@@ -14,20 +14,20 @@ const displayPhones = phones => {
     console.log(phones)
     const searchTotal = document.getElementById('searchTotal')
     searchTotal.textContent = ''
-    phones.forEach(phone => {
+    phones.slice(0, 20).forEach(phone => {
         const div = document.createElement('div')
-        div.classList.add('col)')
+        div.classList.add('col')
         div.innerHTML = `
         <div class="card mx-auto">
         <img src="${phone.image}" class="card-img-top w-50 mx-auto" alt="...">
         <div class="card-body">
-            <h5 class="card-title">Brand Name : ${phone.data}</h5>
+            <h5 class="card-title">Brand Name : ${phone.brand}</h5>
             <p class="card-text">Phone-Name : ${phone.phone_name}</p>
             <button onclick ="buttonDetails('${phone.slug}')" class="px-2 rounded bg-secondary text-white border-1">Details</button>
         </div>
     </div>
         `
-        searchTotal.appendChild(div);
+        searchTotal.appendChild(div)
     });
 
 }
