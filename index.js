@@ -12,6 +12,7 @@ const searchButton = () => {
                 // console.log('something')
                 const errorMessage = document.getElementById('error-message')
                 errorMessage.classList.remove('d-none')
+
                 const singlePhoneDetails = document.getElementById('singlePhoneDetails')
                 singlePhoneDetails.textContent = ''
 
